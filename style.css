@@ -1,0 +1,403 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Righteous&family=Sarala:wght@400;700&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    border: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Righteous', cursive;
+    font-family: 'Sarala', sans-serif;
+    background-color: black;
+   
+}
+
+.main-menu{
+    background-color: #fff;
+    height: 80%;
+    width: 500px;
+    border: 1px solid #333;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+
+}
+
+
+
+.jogar{
+    display: inline-block;
+    padding: .75rem 1.25rem;
+    border-radius: 10rem;
+    
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: .15rem;
+    transition: all .3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      
+      border-radius: 10rem;
+      z-index: -2;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      
+      transition: all .3s;
+      border-radius: 10rem;
+      z-index: -1;
+    }
+    &:hover {
+      background-color: green;
+      &:before {
+        width: 100%;
+      }
+    }
+}
+
+.clima-noite{
+    display: inline-block;
+    padding: .75rem 1.25rem;
+    border-radius: 10rem;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: .15rem;
+    transition: all .3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      
+      border-radius: 10rem;
+      z-index: -2;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      
+      transition: all .3s;
+      border-radius: 10rem;
+      z-index: -1;
+    }
+    &:hover {
+      color: #fff;
+      background-color: #333;
+      &:before {
+        width: 100%;
+      }
+    }
+}
+
+.clima{
+    display: flex;
+    padding: 40px;
+    justify-content: space-around;
+
+}
+
+.clima-dia{
+    display: inline-block;
+    padding: .75rem 1.25rem;
+    border-radius: 10rem;
+    
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: .15rem;
+    transition: all .3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      
+      border-radius: 10rem;
+      z-index: -2;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      
+      transition: all .3s;
+      border-radius: 10rem;
+      z-index: -1;
+    }
+    &:hover {
+      background-color: green;
+      &:before {
+        width: 100%;
+      }
+    }
+}
+
+.clima-noite{
+    display: inline-block;
+    padding: .75rem 1.25rem;
+    border-radius: 10rem;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: .15rem;
+    transition: all .3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      
+      border-radius: 10rem;
+      z-index: -2;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      
+      transition: all .3s;
+      border-radius: 10rem;
+      z-index: -1;
+    }
+    &:hover {
+      color: #fff;
+      background-color: #333;
+      &:before {
+        width: 100%;
+      }
+    }
+}
+
+.clima-neve{
+    display: inline-block;
+    padding: .75rem 1.25rem;
+    border-radius: 10rem;
+    
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: .15rem;
+    transition: all .3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      
+      border-radius: 10rem;
+      z-index: -2;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      
+      transition: all .3s;
+      border-radius: 10rem;
+      z-index: -1;
+    }
+    &:hover {
+      color: #fff;
+      &:before {
+        width: 100%;
+      }
+    }
+}
+
+.game-board{
+    visibility: hidden;
+}
+
+.carro{
+    position: absolute;
+    bottom: 0;
+    left: 0%;
+    animation: carro 1000ms;
+    
+    
+}
+
+.gasolina{
+  position: absolute;
+  left: 25%;
+  bottom: 70%;
+  animation: gasolina 4000ms infinite;
+}
+
+.pedra{
+  position: absolute;
+  left: 70%;
+  bottom: 70%;
+  animation: gasolina 9500ms infinite;
+}
+
+.carro-movimento-1to2{
+    animation: carro-1to2 500ms;
+}
+
+.carro-movimento-2to3{
+    animation: carro-2to3 500ms;
+}
+
+.carro-movimento-3to4{
+    animation: carro-3to4 500ms;
+}
+
+.carro-movimento-4to3{
+    animation: carro-4to3 500ms;
+}
+
+.carro-movimento-3to2{
+    animation: carro-3to2 500ms;
+}
+
+.carro-movimento-2to1{
+    animation: carro-2to1 500ms;
+}
+
+@keyframes gasolina{
+    0%{
+      bottom: 70%;
+    }
+
+    10%{
+      bottom: 60%;
+    }
+    25%{
+      bottom: 50%;
+    }
+    35%{
+      bottom: 40%;
+    }
+    50%{
+      bottom: 25%;
+    }
+    65%{
+      bottom: 10%;
+    }
+    75%{
+      bottom: 0%;
+    }
+    100%{
+      bottom: -25%;
+      
+    }
+}
+
+@keyframes carro-1to2{
+    0% {
+        left: 0%;
+    }
+
+    25%{
+        left: 10%;
+    }
+
+   50%{
+        left: 25%;
+   }
+   100%{
+        left: 25%;
+   }
+}
+
+@keyframes carro-2to3{
+    0%{
+        left: 25%
+    }
+
+    100%{
+        left: 50%;
+    }
+}
+
+@keyframes carro-3to4{
+    0%{
+        left: 50%
+    }
+
+    100%{
+        left: 75%;
+    }
+}
+
+@keyframes carro-4to3{
+    0%{
+        left: 75%
+    }
+
+    100%{
+        left: 50%;
+    }
+}
+
+@keyframes carro-3to2{
+    0%{
+        left: 50%
+    }
+
+    100%{
+        left: 25%;
+    }
+}
+
+@keyframes carro-2to1{
+    0%{
+        left: 25%
+    }
+
+    100%{
+        left: 0%;
+    }
+}
+
+
+
+
