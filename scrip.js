@@ -1,13 +1,37 @@
 const carro = document.querySelector('.carro');
-const jogar = document.querySelector('.jogar')
+const jogar = document.querySelector('.jogar');
+const pedra = document.querySelector('.pedra');
 var pista = 1;
+var contador = 0;
+
 
 
 const play = () =>{
+    const gameboard = document.querySelector('.game-board');
     gameboard.style.visibility = 'visible';
+   
 }
 
-jogar.addEventListener(onclick,play)
+jogar.addEventListener('click',play);
+
+
+const loop = setInterval(()=>{
+    const pedraPosition = pedra.offsetTop;
+    console.log(pedra.offsetTop);
+    
+  
+        if(pedraPosition >= 570 && pista == 4 ){
+           pedra.style.animation = 'none'
+           pedra.style.bottom = '0%'
+            
+            
+        }
+        
+        
+
+    
+},10);
+
 
 
 const movimentRight = () =>{
@@ -45,7 +69,7 @@ const movimentRight = () =>{
 const movimentLeft = () =>{
     
     switch(pista){
-        case 4:
+        case 4:   
             carro.classList.add('carro-movimento-4to3');
             setTimeout(() =>{
                 carro.classList.remove('carro-movimento-4to3');
@@ -85,3 +109,5 @@ function direitaEsquerda(even){
         movimentLeft();
     }
 }
+
+

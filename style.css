@@ -252,7 +252,7 @@ body{
 }
 
 .game-board{
-    visibility: hidden;
+  visibility: hidden;
 }
 
 .carro{
@@ -268,14 +268,14 @@ body{
   position: absolute;
   left: 25%;
   bottom: 70%;
-  animation: gasolina 4000ms infinite;
+  animation: gasolina 4000ms infinite linear;
 }
 
 .pedra{
   position: absolute;
   left: 70%;
   bottom: 70%;
-  animation: gasolina 9500ms infinite;
+  animation: gasolina 9500ms infinite linear;
 }
 
 .carro-movimento-1to2{
