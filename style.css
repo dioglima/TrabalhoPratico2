@@ -12,23 +12,47 @@ body{
     font-family: 'Poppins', sans-serif;
     font-family: 'Righteous', cursive;
     font-family: 'Sarala', sans-serif;
-    background-color: black;
+    background-image: url(/img/pista.jpg);
+    width: 100%;
+    height: 100%;
+    margin: 0;
    
 }
 
+#game-container {
+  width: 600px;
+  height: 650px;
+  background-image: url(imagens/pista.jpg);
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto; 
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+}
+
 .main-menu{
-    background-color: #fff;
-    height: 80%;
+    height: 730px;
     width: 500px;
     border: 1px solid #333;
     margin: 0 auto;
     position: relative;
     text-align: center;
-
+    background-image: url(/img/pista.jpg);
 }
 
-
-
+h1 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  display: none;
+  color: black;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  padding-top: 10px;
+  text-align: center;
+}
 .jogar{
     display: inline-block;
     padding: .75rem 1.25rem;
@@ -60,16 +84,32 @@ body{
       width: 0%;
       height: 100%;
       
-      transition: all .3s;
+      transition: .7s ease;
+      transform: translate(-50%, -50%);
       border-radius: 10rem;
       z-index: -1;
     }
     &:hover {
-      background-color: green;
+      background-color: rgb(58, 171, 58);
+      border: transparent;
       &:before {
         width: 100%;
       }
     }
+}
+
+.btn1 {
+  &:before {
+    width: 0;
+    height: 100%;
+
+  }
+
+  &:hover{
+    &:before{
+      width: 100%;
+    }
+  }
 }
 
 .clima-noite{
@@ -118,9 +158,10 @@ body{
 .clima{
     display: flex;
     padding: 40px;
-    justify-content: space-around;
-
+    justify-content: space-between;
 }
+
+
 
 .clima-dia{
     display: inline-block;
@@ -158,7 +199,8 @@ body{
       z-index: -1;
     }
     &:hover {
-      background-color: green;
+      background-color: blue;
+      border: transparent;
       &:before {
         width: 100%;
       }
@@ -201,6 +243,7 @@ body{
     }
     &:hover {
       color: #fff;
+      border: transparent;
       background-color: #333;
       &:before {
         width: 100%;
@@ -245,6 +288,8 @@ body{
     }
     &:hover {
       color: #fff;
+      background-color: aqua;
+      border: transparent;
       &:before {
         width: 100%;
       }
@@ -252,30 +297,31 @@ body{
 }
 
 .game-board{
-  visibility: hidden;
+    
 }
 
 .carro{
     position: absolute;
     bottom: 0;
     left: 0%;
-    animation: carro 1000ms;
+    height: auto;
+    animation: carro 2000ms;
     
     
 }
 
 .gasolina{
   position: absolute;
-  left: 25%;
+  left: 23%;
   bottom: 70%;
-  animation: gasolina 4000ms infinite linear;
+  animation: gasolina 4000ms infinite;
 }
 
 .pedra{
   position: absolute;
-  left: 70%;
+  left: 72%;
   bottom: 70%;
-  animation: gasolina 9500ms infinite linear;
+  animation: gasolina 9500ms infinite;
 }
 
 .carro-movimento-1to2{
