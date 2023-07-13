@@ -12,7 +12,7 @@ body{
     font-family: 'Poppins', sans-serif;
     font-family: 'Righteous', cursive;
     font-family: 'Sarala', sans-serif;
-    background-image: url(/img/pista.jpg);
+    
     width: 100%;
     height: 100%;
     margin: 0;
@@ -22,7 +22,7 @@ body{
 #game-container {
   width: 600px;
   height: 650px;
-  background-image: url(imagens/pista.jpg);
+  
   position: relative;
   overflow: hidden;
   margin: 0 auto; 
@@ -38,7 +38,7 @@ body{
     margin: 0 auto;
     position: relative;
     text-align: center;
-    background-image: url(/img/pista.jpg);
+   
 }
 
 h1 {
@@ -296,8 +296,16 @@ h1 {
     }
 }
 
+#game-over{
+  visibility: hidden;
+}
+
+#restart-btn{
+  visibility: hidden;
+}
+
 .game-board{
-    
+    visibility: hidden;
 }
 
 .carro{
@@ -314,14 +322,14 @@ h1 {
   position: absolute;
   left: 23%;
   bottom: 70%;
-  animation: gasolina 4000ms infinite;
+  animation: none;
 }
 
 .pedra{
   position: absolute;
   left: 72%;
   bottom: 70%;
-  animation: gasolina 9500ms infinite;
+  animation: none;
 }
 
 .carro-movimento-1to2{

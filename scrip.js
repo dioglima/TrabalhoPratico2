@@ -1,13 +1,70 @@
-  const carro = document.querySelector('.carro');
-const jogar = document.querySelector('.jogar')
+const carro = document.querySelector('.carro');
+const jogar = document.querySelector('.jogar');
+const pedra = document.querySelector('.pedra');
+const gasolina = document.querySelector('.gasolina');
 var pista = 1;
+var contador = 0;
+let pontos = 100;
 
 
-const play = () =>{
+
+
+
+function iniciarJogo(){
+    const gameboard = document.querySelector('.game-board');
     gameboard.style.visibility = 'visible';
+    movimentoObstaculo();
+    pontos = 100;
+    
 }
 
-jogar.addEventListener(onclick,play)
+const play = () =>{
+    iniciarJogo();
+   
+}
+
+jogar.addEventListener('click',play);
+
+
+const loop = setInterval(()=>{
+    const pedraPosition = pedra.offsetTop;
+    const gasolinaPosition = gasolina.offsetTop
+    console.log(pedra.offsetTop);
+    
+  
+        if(pedraPosition >= 600  && pista == 4 ){
+            retirarPontuacao();
+            
+            
+        }
+
+        if(gasolinaPosition >= 600 && pista == 2){
+            adicionarPontuacao();
+        }
+
+        if(pontos == 0 ){
+            pararJogo();
+        }
+        
+        
+
+    
+},10);
+
+
+function adicionarPontuacao() {
+    pontos = pontos + 10;
+    document.getElementById('pontos').innerText = 'Pontuação: ' + pontos;
+    
+   
+  }
+
+  function retirarPontuacao() {
+    pontos = pontos - 5;
+    document.getElementById('pontos').innerText = 'Pontuação: ' + pontos;
+    
+   
+  }
 
 
 const movimentRight = () =>{
@@ -45,7 +102,7 @@ const movimentRight = () =>{
 const movimentLeft = () =>{
     
     switch(pista){
-        case 4:
+        case 4:   
             carro.classList.add('carro-movimento-4to3');
             setTimeout(() =>{
                 carro.classList.remove('carro-movimento-4to3');
@@ -73,11 +130,30 @@ const movimentLeft = () =>{
 
 }
 
+function movimentoObstaculo(){
+    pedra.style.animation = 'gasolina 9500ms infinite';
+    gasolina.style.animation = 'gasolina 4000ms infinite';
+}
+
+function pararJogo(){
+    pedra.style.animation = 'none';
+    gasolina.style.animation = 'none';
+    restart = document.getElementById('restart-btn');
+    gameOver = document.getElementById('game-over');
+    
+    restart.style.visibility = 'visible';
+    gameOver.style.visibility = 'visible';
+}
+
+
+
+
 let even = document.addEventListener("keydown", direitaEsquerda);
 
 
 
 function direitaEsquerda(even){
+    adicionarPontuacao()
     if(even.key == 'ArrowRight'){
         movimentRight();
     }
@@ -85,3 +161,5 @@ function direitaEsquerda(even){
         movimentLeft();
     }
 }
+
+
